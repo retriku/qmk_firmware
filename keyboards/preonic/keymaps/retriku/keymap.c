@@ -60,23 +60,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 | Bksp |
+ * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 | F11  | F12  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | F11  | F12  |      |      |      |      |      |      |      |   [  |   ]  |   \  |
+ * |      |      |      |      |      |      |      |      |      |   [  |   ]  |   \  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Esc  |      |      |      |      |      |      |      |      |  _-  |  +=  |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |CMD([)|CMD(])|Enter |
+ * |LShift|      |      |      |      |      |      |      |      |CMD([)|CMD(])|Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |FUNCT | Ctrl | Alt  | GUI  |      |             |      | Home | Pg Dn| Pg Up| End  |
+ * |FUNCT | Ctrl | Alt  | GUI  |      |             |Raise | Home | Pg Dn| Pg Up| End  |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid(
-  XXXXXXX , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , KC_F6   , KC_F7   , KC_F8   , KC_F9      , KC_F10     , KC_BSPC ,
-  KC_F11  , KC_F12  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_LBRC    , KC_RBRC    , KC_BSLS ,
+  KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10     , KC_F11     , KC_F12  ,
+  XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_LBRC    , KC_RBRC    , KC_BSLS ,
   KC_ESC  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MINS    , KC_EQL     , XXXXXXX ,
   _______ , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , G(KC_LBRC) , G(KC_RBRC) , KC_ENT  ,
-  _______ , _______ , _______ , _______ , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_HOME , KC_PGDOWN  , KC_PGUP    , KC_END
+  _______ , _______ , _______ , _______ , XXXXXXX , XXXXXXX , XXXXXXX , RAISE   , KC_HOME , KC_PGDOWN  , KC_PGUP    , KC_END
 ),
 
 /* Raise
@@ -85,19 +85,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * | Caps |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | POOP |UNFLIP|TFLIP |SHRUG |      |      |      |      |      | Br-  | Br+  |      |
+ * |PrtScr|      |      |      |      |      |      |      |      | Br-  | Br+  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |FUNCT | Ctrl | Alt  | GUI  |      |             |      | Mute | Vol- | Vol+ |      |
+ * |FUNCT | Ctrl | Alt  | GUI  |Lower |             |      | Mute | Vol- | Vol+ |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_preonic_grid(
   KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10  , KC_F11  , KC_F12  ,
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-  XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
-  POOP    , UNFLIP  , TFLIP   , SHRUG   , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_BRID , KC_BRIU , XXXXXXX ,
-  _______ , _______ , _______ , _______ , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MUTE , KC_VOLD , KC_VOLU , XXXXXXX
+  KC_CAPS , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+  KC_PSCR , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_BRID , KC_BRIU , XXXXXXX ,
+  _______ , _______ , _______ , _______ , LOWER   , XXXXXXX , XXXXXXX , XXXXXXX , KC_MUTE , KC_VOLD , KC_VOLU , XXXXXXX
 ),
 
 /* Adjust (Lower + Raise)
